@@ -30,3 +30,74 @@ Manually compiling this context takes minutes. **DOM to Prompt** cuts this down 
 ---
 
  Architecture Overview
+┌─────────────────────────────────────────────────────────────┐
+│                       Active Web Page                       │
+└──────────────────────────────┬──────────────────────────────┘
+│
+[ Alt + P ] or [ Extension Popup ]
+│
+▼
+┌─────────────────────────────────────────────────────────────┐
+│                    Content Script Engine                    │
+│  • Event-captured Mouseover & Click listeners               │
+│  • High-contrast fixed viewport overlay canvas              │
+│  • Computed style extractor (window.getComputedStyle)       │
+└──────────────────────────────┬──────────────────────────────┘
+│
+▼
+┌─────────────────────────────────────────────────────────────┐
+│                   Markdown Prompt Engine                    │
+│  • Generates clean HTML & CSS context block                 │
+│  • Executes secure cross-context Clipboard write            │
+│  • Displays non-blocking UI Toast confirmation              │
+└─────────────────────────────────────────────────────────────┘
+
+<button class="inline-flex items-center justify-center rounded-md text-sm font-medium">
+  <span>Submit Query</span>
+</button>
+
+Goal / Task
+Analyze this component and provide clean, modern, fully functional code (React/Tailwind or standard HTML/CSS) to replicate or refine its layout.
+
+
+---
+
+## 📦 Local Installation (Developer Mode)
+
+1. **Clone or Download the Repository:**
+   ```bash
+   git clone [https://github.com/your-username/dom-to-prompt.git](https://github.com/your-use
+   Open Chrome Extensions Manager:
+Navigate to chrome://extensions/ in your Chrome browser address bar.
+
+Enable Developer Mode:
+Toggle the Developer mode switch in the top-right corner of the page.
+
+Load Unpacked Extension:
+
+Click the Load unpacked button in the top-left corner.
+
+Select the directory containing the cloned repository files (dom-to-prompt).
+
+Start Inspecting:
+Navigate to any website, press Alt + P, hover over any element, and click to copy!
+
+📂 Project Structure
+Plaintext
+dom-to-prompt/
+├── manifest.json   # Extension configuration (Manifest V3)
+├── content.js      # Inspection engine, event capturing, prompt builder
+├── overlay.css     # Fixed position bounding overlay & toast UI styles
+├── popup.html      # Extension toolbar popup layout
+├── popup.js        # Popup trigger logic & active tab messaging
+└── README.md       # Project documentation
+
+📂 Project StructurePlaintextdom-to-prompt/
+├── manifest.json   # Extension configuration (Manifest V3)
+├── content.js      # Inspection engine, event capturing, prompt builder
+├── overlay.css     # Fixed position bounding overlay & toast UI styles
+├── popup.html      # Extension toolbar popup layout
+├── popup.js        # Popup trigger logic & active tab messaging
+└── README.md       # Project documentation
+⌨️ Shortcuts & ControlsShortcut / ActionFunctionAlt + P (or Opt + P)Toggle Inspect Mode On / OffEscCancel Inspection ModeMouse HoverFrame current DOM elementLeft ClickCapture element metadata & copy Markdown prompt📄 LicenseThis project is open-source software licensed under the MIT License.
+
