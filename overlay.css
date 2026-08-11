@@ -1,0 +1,10 @@
+#dom-prompt-overlay {
+  position: absolute;
+  pointer-events: none;
+  border: 2px dashed #6366f1;
+  background-color: rgba(99, 102, 241, 0.15);
+  z-index: 999999;
+  transition: all 0.05s ease-out;
+  display: none;
+  box-sizing: border-box;
+}

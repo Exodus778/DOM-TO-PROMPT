@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM to Prompt</title>
+    <style>
+      :root {
+        --primary: #6366f1;
+        --primary-hover: #4f46e5;
+        --bg: #0f172a;
+        --card: #1e293b;
+        --text: #f8fafc;
+        --muted: #94a3b8;
+      }
+
+      body {
+        width: 280px;
+        margin: 0;
+        padding: 16px;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background-color: var(--bg);
+        color: var(--text);
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+      }
+
+      .title {
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .status-badge {
+        font-size: 10px;
+        text-transform: uppercase;
+        padding: 2px 6px;
+        border-radius: 9999px;
+        background-color: rgba(99, 102, 241, 0.2);
+        color: #818cf8;
+        font-weight: 600;
+      }
+
+      .card {
+        background-color: var(--card);
+        border-radius: 8px;
+        padding: 12px;
+        margin-bottom: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .shortcut-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      kbd {
+        background-color: #334155;
+        color: var(--text);
+        padding: 3px 6px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-family: monospace;
+        border: 1px solid #475569;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 10px;
+        border-radius: 16px;
+        border: none;
+        background-color: var(--primary);
+        color: white;
+        font-weight: 600;
+        font-size: 13px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      .btn:hover {
+        background-color: var(--primary-hover);
+      }
+
+      .footer {
+        font-size: 11px;
+        color: var(--muted);
+        text-align: center;
+        margin-top: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="title">🎯 DOM to Prompt</h1>
+      <span class="status-badge">v1.0</span>
+    </div>
+
+    <div class="card">
+      <div class="shortcut-row">
+        <span>Toggle Inspector</span>
+        <span><kbd>Alt</kbd> + <kbd>P</kbd></span>
+      </div>
+    </div>
+
+    <button id="toggle-btn" class="btn">Start Inspecting</button>
+
+    <div class="footer">Hover element & click to copy LLM prompt</div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
